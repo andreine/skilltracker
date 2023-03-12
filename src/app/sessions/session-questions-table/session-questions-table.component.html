@@ -1,0 +1,99 @@
+<div class="card container mt-5">
+    <h5>Toate intrebarile</h5>
+        <p-table [value]="allQuestions" dataKey="id" editMode="row" [tableStyle]="{'min-width': '50rem'}" [paginator]="true" [rows]="10">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="questionCategory" style="width:10%">Categorie <p-sortIcon field="questionCategory"></p-sortIcon></th>
+                    <th pSortableColumn="name" style="width:20%">Intrebare <p-sortIcon field="name"></p-sortIcon></th>
+                    <th pSortableColumn="firstAnswer" style="width:20%">A <p-sortIcon field="firstAnswer"></p-sortIcon></th>
+                    <th pSortableColumn="secondAnswer" style="width:20%">B <p-sortIcon field="secondAnswer"></p-sortIcon></th>
+                    <th pSortableColumn="thirdAnswer" style="width:20%">C <p-sortIcon field="thirdAnswer"></p-sortIcon></th>
+                    <th pSortableColumn="fourthAnswer" style="width:20%">D <p-sortIcon field="fourthAnswer"></p-sortIcon></th>
+                    <th pSortableColumn="correctAnswer" style="width:10%">Raspuns <p-sortIcon field="correctAnswer"></p-sortIcon></th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-question let-editing="editing" let-ri="rowIndex">
+                <tr [pEditableRow]="question">
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="question.questionCategory" required>
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{question.questionCategory}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="question.name" required>
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{question.name}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="question.firstAnswer" required>
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{question.firstAnswer}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="question.secondAnswer">
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{question.secondAnswer}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="question.thirdAnswer">
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{question.thirdAnswer}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="question.fourthAnswer">
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{question.fourthAnswer}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="question.correctAnswer">
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{question.correctAnswer}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <div class="flex align-items-center justify-content-center gap-2">
+                            <button *ngIf="!editing && !globalEdit" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(question)" class="p-button-rounded p-button-text"></button>
+                            <button *ngIf="!editing && !globalEdit" pButton pRipple type="button" pInitEditableRow icon="pi pi-trash" (click)="onRowEditInit(question)" class="p-button-rounded p-button-text p-button-danger"></button>
+                            <button *ngIf="editing && globalEdit" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(question)" class="p-button-rounded p-button-text p-button-success mr-2"></button>
+                            <button *ngIf="editing && globalEdit" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(question, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>

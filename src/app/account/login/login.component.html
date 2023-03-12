@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-center">
+    <form [formGroup]="userLoginForm">
+      <h2 class="d-flex justify-content-center login-text">Login</h2>
+      <input type="text" formControlName="email" placeholder="email">
+      <input type="password"  formControlName="password" placeholder="passowrd">
+      <div class="button-container">
+          <button pButton type="button" label="Autentificare" class="p-button" (click)="onLogin()"></button>
+      </div>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+.navbar-layout{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.outer-nav-container{
+    border-bottom: 1px solid rgb(236, 229, 229);
+}
+
+.login-button{
+    border: 0;
+    background-color: rgb(97, 97, 212);
+    padding: 10px;
+    width: 100px;
+    color: white;
+    border-radius: 10px;
+}
+
+.nav-container{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+button{
+    margin: 10px;
+}
+
+.logo-img{
+    cursor: pointer;
+}

@@ -1,0 +1,8 @@
+<div class="container sessionPageContainer">
+    <div class="d-flex justify-content-end">
+        <button pButton type="button" (click)="showDialog()" label="Add new session" class="mb-4"></button>
+    </div>
+    <app-sessions-table [sessions]="sessions"></app-sessions-table>
+</div>
+
+<app-new-session-modal [showModal]="showModal" (closeModalEvent)="hideModal($event)"></app-new-session-modal>

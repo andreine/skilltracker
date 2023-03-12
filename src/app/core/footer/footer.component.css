@@ -1,0 +1,20 @@
+.footer-container{
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.invisible-element{
+  height: 30px;
+  margin: 30px;
+}
+
+.footer{
+  height: 50px;
+  border-top: 1px solid rgb(248,249,250);
+  text-align: center;
+  /* box-shadow: 0px 3px 3px 3px grey; */
+  background-color: rgb(248,249,250);
+}

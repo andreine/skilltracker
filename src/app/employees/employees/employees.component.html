@@ -1,0 +1,12 @@
+<div class="container employees-table-container">
+    <div class="d-flex justify-content-end mb-4">
+        <button pButton type="button" (click)="showDialog()" label="Create user"></button>
+    </div>
+    <p-progressBar mode="indeterminate" class="progress-bar"  *ngIf="!isDataLoaded"></p-progressBar>
+    <app-employees-table [employees]="employees" *ngIf="isDataLoaded"></app-employees-table>
+</div>
+
+<app-invite-modal [showModal]="showModal" (closeModalEvent)="hideModal($event)"></app-invite-modal>
+
+
+

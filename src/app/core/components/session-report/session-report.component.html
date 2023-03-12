@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mt-2 mb-1">
+        <button pButton type="button"  label="Back" (click)="navigateTo()"></button>
+        <div *ngIf="employeeDetails" class="employee-name">Employee: {{employeeDetails.firstName}}  {{employeeDetails.lastName}}</div>
+    </div>
+    <p-tabView >
+
+        <p-tabPanel header="Session Report">
+            <app-report-chart [categories]="categories" [scores]="scores" *ngIf="showGraph"></app-report-chart>
+        </p-tabPanel>
+        <p-tabPanel header="Questions Report">
+            <app-report-answers [questionReport]="questionReport"></app-report-answers>
+        </p-tabPanel>
+    </p-tabView>
+</div>

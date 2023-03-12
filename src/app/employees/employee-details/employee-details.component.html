@@ -1,0 +1,16 @@
+<div class="container employee-details-container">
+    <div class="d-flex justify-content-between mb-4">
+        <button pButton type="button"  label="Back" [routerLink]="['../../']"></button>
+        <button pButton type="button"  label="Add session to user"  (click)="showDialog()"></button>
+    </div>
+
+    <app-employee-details-table *ngIf="employeeSessions.length > 0" [sessions]="employeeSessions"></app-employee-details-table>
+
+    <div class="d-flex justify-content-center no-employee-sessions-outer">
+        <div *ngIf="employeeSessions.length === 0" class="no-employee-sessions">
+            <p class="par-no-sessions-emp">There are no sessions for this employee</p>
+        </div>
+    </div>
+</div>
+
+<app-add-session-modal [showModal]="showModal"  (closeModalEvent)="hideModal($event)"></app-add-session-modal>

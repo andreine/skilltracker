@@ -1,0 +1,18 @@
+<p-table [value]="sessions" [tableStyle]="{'min-width': '50rem'}">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Name</th>
+            <th>Created</th>
+            <th>Edit session</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-session>
+        <tr>
+            <td>{{session.name}}</td>
+            <td>{{session.created | date:'medium'}}</td>
+            <td>                            
+                <button pButton pRipple type="button" icon="pi pi-file-edit" class="p-button-rounded p-button-text p-button-secondary" [routerLink]="['./session', session.id]"></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

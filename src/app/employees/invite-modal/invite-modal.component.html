@@ -1,0 +1,12 @@
+<p-dialog header="Create User" [(visible)]="showModal" (onHide)="closeModal()" [resizable]="false" [style]="{width: '550px', height: '550px'}" [modal]="true">
+    <div class="d-flex flex-column align-items-stretch">
+        <form [formGroup]="userInviteForm" class="d-flex flex-column">
+            <input type="text" pInputText placeholder="Fisrt Name" formControlName="firstName"> 
+            <input type="text" pInputText placeholder="Last Name" formControlName="lastName"> 
+            <input type="text" pInputText placeholder="Email" formControlName="email"> 
+            <input type="password" pInputText placeholder="Password" formControlName="password"> 
+            <p-dropdown [options]="roles" optionLabel="name" placeholder="Role" (onChange)="changeRole($event)" [style]="{width: '50%', margin: '5px'}"></p-dropdown>
+        </form>
+        <button pButton type="button" (click)="inviteUser()" label="Create user" class="align-self-end mt-5"></button>
+    </div>
+</p-dialog>

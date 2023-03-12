@@ -1,0 +1,12 @@
+<div  class="d-flex justify-content-center mt-5">
+    <div style="width: 45%">
+        <p-dropdown [options]="charts" [(ngModel)]="selectedChart" optionLabel="name" optionValue="name" 
+        (onChange)="onChartChange($event)" class="justify-self-end"
+        ></p-dropdown>
+        <div class="mt-3">
+            <p-chart *ngIf="selectedChart === 'pie'" type="pie" [data]="pieChartData" [options]="chartOptions" [style]="{'width': '55%'}"></p-chart>
+            <p-chart *ngIf="selectedChart === 'bar'" type="bar" [data]="barChartData" [options]="chartOptions" [style]="{'width': '55%'}"></p-chart>
+            <p-chart *ngIf="selectedChart === 'radar'" type="radar" [data]="radarChartData" [options]="chartOptions" [style]="{'width': '55%'}"></p-chart>
+        </div>
+    </div>
+</div>

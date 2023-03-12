@@ -1,0 +1,8 @@
+<p-dialog header="Create User" [(visible)]="showModal" (onHide)="closeModal()" [resizable]="false" [style]="{width: '550px', height: '350px'}" [modal]="true">
+    <div class="d-flex flex-column align-items-stretch">
+        <form [formGroup]="newSessionForm" class="d-flex flex-column">
+            <p-dropdown [options]="sessions" optionLabel="name" placeholder="Select Session" (onChange)="changeSession($event)" [style]="{width: '50%', margin: '5px'}"></p-dropdown>
+        </form>
+        <button pButton type="button" (click)="addEmployeeSession()" label="Add session" class="align-self-end mt-5"></button>
+    </div>
+</p-dialog>

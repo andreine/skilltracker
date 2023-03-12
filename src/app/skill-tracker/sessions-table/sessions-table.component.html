@@ -1,0 +1,36 @@
+<div class="table-container">
+    <p-table [value]="sessions" [tableStyle]="{'min-width': '50rem'}" >
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Activation Date</th>
+                <th>Completed</th>
+                <th>Take assigmanet</th>
+                <th>See results</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-session>
+            <tr>
+                <td>{{session.sessionName}}</td>
+                <td>{{session.activationDate | date:'medium'}}</td>
+                <td>
+                    <button pButton pRipple 
+                    [disabled]="true"
+                    type="button" icon="pi pi-check-circle" class="p-button-rounded p-button-text p-button-success" *ngIf="session.isCompleted"></button>
+                </td>
+                <td>                            
+                    <button pButton pRipple type="button" 
+                    icon="pi pi-file-export" 
+                    [disabled]="session.isCompleted"
+                    class="p-button-rounded p-button-text p-button-help" [routerLink]="['./session', session.id]"></button>
+                </td>
+                <td>                            
+                    <button pButton pRipple type="button" 
+                    icon="pi pi-info-circle" 
+                    [disabled]="!session.isCompleted"
+                    class="p-button-rounded p-button-text p-button-primary" [routerLink]="['../sessionReport', session.id]"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

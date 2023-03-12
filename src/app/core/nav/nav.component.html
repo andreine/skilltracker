@@ -1,0 +1,31 @@
+<ng-container>
+    <div class="outer-nav-container" *ngIf="!(this.auth.currentUserData | async)">
+        <nav class="container nav-container">
+            <div class="navbar-layout">
+                <span  class="logo-img"><img src="./assets/images/logo.png" alt="" routerLink="/home"></span>
+                <span>
+                    <button class="login-button" routerLink="/account/login">Login</button>
+                </span>
+            </div>
+        </nav>
+    </div>
+    
+    
+    <div class="outer-nav-container" *ngIf="(this.auth.currentUserData | async)">
+        <nav class="container nav-container">
+            <div class="navbar-layout">
+                <span class="logo-img"><img src="./assets/images/logo.png" alt="" routerLink="/home"> </span>
+                <span>
+                    <button class="login-button" *ngIf="canManageQuestions" routerLink="/sessions">Sessions</button>
+                    <button class="login-button" *ngIf="canTakeTests" routerLink="/skilltracker">SkillTracker</button>
+                    <button class="login-button" *ngIf="canManageQuestions || canManageUsers" routerLink="/employees">Employees</button>
+                    <button class="login-button" routerLink="/profile" >Profile</button>
+                    <button class="login-button" (click)="logout()">Logout</button>
+                </span>
+            </div>
+        </nav>
+    </div>
+</ng-container>
+
+
+

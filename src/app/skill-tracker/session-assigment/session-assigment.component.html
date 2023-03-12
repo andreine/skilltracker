@@ -1,0 +1,11 @@
+<div class="question-container">
+    <div *ngFor = "let question of questions" (click)="selectedQuestion($event,question)" class="questions">
+        <h4 class="question">{{question.name}}</h4>
+        <div class="answer">{{question.firstAnswer}}</div>
+        <div class="answer">{{question.secondAnswer}}</div>
+        <div class="answer">{{question.thirdAnswer}}</div>
+        <div class="answer">{{question.fourthAnswer}}</div>
+    </div>
+    <button pButton type="button" (click)="submitSessionQuestions()" label="Submit answers" class="mb-4"></button>
+</div>
+

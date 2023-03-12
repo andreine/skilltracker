@@ -1,0 +1,8 @@
+<p-dialog header="Create Session" [(visible)]="showModal" (onHide)="closeModal()" [resizable]="false" [style]="{width: '550px', height: '270px'}" [modal]="true">
+    <div class="d-flex flex-column align-items-stretch">
+        <form [formGroup]="addNewSessionForm" class="d-flex flex-column">
+            <input type="text" pInputText placeholder="session name" formControlName="name"> 
+        </form>
+        <button pButton type="button" (click)="addNewSession()" label="Create session" class="align-self-end mt-5"></button>
+    </div>
+</p-dialog>

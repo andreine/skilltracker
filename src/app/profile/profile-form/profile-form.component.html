@@ -1,0 +1,11 @@
+<div class="container mt-5 form-container">
+    <form [formGroup]="profileForm" class="d-flex flex-column">
+        <label for="email">Email</label>
+        <input type="text" pInputText id="email" placeholder="Emal" formControlName="email"> 
+        <label for="firstName">First Name</label>
+        <input type="text" pInputText id="firstName" placeholder="First Name" formControlName="firstName"> 
+        <label for="lastName">Last Name</label>
+        <input type="text" pInputText id="lastName" placeholder="Last Name" formControlName="lastName"> 
+        <button pButton type="button" label="Update profile" class="align-self-end mt-5"></button>
+    </form>
+</div>

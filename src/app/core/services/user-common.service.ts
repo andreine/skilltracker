@@ -1,0 +1,20 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UserCommonService {
+
+  baseUrl = environment.apiUrl;
+
+  constructor(private http: HttpClient) { }
+
+
+  getEmployeeDetailsOnSessionId(userSessionId: number){
+    return this.http.get<any>(this.baseUrl + `Account/GetEmployeeDetailsOnSessionId/${userSessionId}`);
+  }
+
+
+}

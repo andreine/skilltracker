@@ -1,0 +1,25 @@
+<div class="container d-flex justify-content-between mt-3">
+    <button pButton type="button"  label="Back" [routerLink]="['../../']"></button>
+
+    <form [formGroup]="fileUploadForm" (ngSubmit)="onFormSubmit()">
+        <div class="d-flex align-items-center">
+            <input type="file" class="custom-file-input" id="customFile" name="myfile"
+            (change)="onFileSelect($event)" #UploadFileInput>
+            <label for="customFile">
+                <i class="pi pi-file-excel" style="font-size: 30px; color: green; margin-right: 10px; cursor: pointer;"></i>
+            </label>
+            <button pButton  class="btn btn-success" type="submit" [disabled]="!canPressUpload">Upload</button>
+        </div>
+    </form>
+</div>
+
+
+<app-session-questions-table [allQuestions]="allQuestions" *ngIf="allQuestions.length > 0"></app-session-questions-table>
+
+
+
+<div class="d-flex justify-content-center no-employee-sessions-outer">
+    <div *ngIf="allQuestions?.length === 0" class="no-employee-sessions">
+        <p class="par-no-sessions-emp">There are no questions for this session</p>
+    </div>
+</div>

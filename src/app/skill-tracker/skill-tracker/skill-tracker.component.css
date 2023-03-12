@@ -1,0 +1,19 @@
+.selected{
+    background-color: rgb(142, 208, 255);
+}
+
+.answer{
+    cursor: pointer;
+    border-bottom: 1px solid rgb(142, 208, 255);
+}
+
+.questions{
+    width: 50%;
+    padding: 15px;
+}
+
+.question-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
